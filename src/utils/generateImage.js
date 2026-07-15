@@ -2,7 +2,7 @@ import CryptoJS from "crypto-js";
 
 export const getAvatar = (email) => {
   const hash = CryptoJS.MD5(email.trim().toLowerCase());
-  return `https://gravatar.com/avatar/${hash}`;
+  return `https://gravatar.com/avatar/${hash}?s=40&d=identicon`;
 };
 
 export const getRandomImage = () => {
