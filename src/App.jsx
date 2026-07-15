@@ -9,9 +9,26 @@ import { useEffect, useState } from "react";
 function App() {
   const [tweets, setTweets] = useState([]);
 
-  /*useEffect(() => {
-    console.log(tweets);
-  }, [tweets]);*/
+  useEffect(() => {
+    const interval = setInterval(() => {
+      addNewRandomTweets();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const addNewRandomTweets = () => {
+    const randomTweets = [
+      "Acabei de entrar no clone do Twitter! Estou animado para me conectar com todos aqui. 👋 #NovoPorAqui",
+      "Mais um dia, mais uma linha de código. Continuem avançando, colegas desenvolvedores! 💻 #VidaDeDev",
+      "Quem mais vai ficar acordado até tarde para assistir à chuva de meteoros hoje à noite? 🌠 #CeuEstrelado",
+      "Lembrete: seja gentil consigo mesmo e com os outros. Um pouco de compaixão faz toda a diferença. ❤️ #Gentileza",
+      "Dica técnica do dia: sempre faça backup dos seus dados! Você vai agradecer a si mesmo mais tarde. 💾 #Backup",
+    ];
+    const randomTweet =
+      randomTweets[Math.floor(Math.random() * randomTweets.length)];
+
+    addNewTweet(randomTweet, Math.random() > 0.7);
+  };
 
   const addNewTweet = (content, includeImage = false) => {
     const newTweet = {
