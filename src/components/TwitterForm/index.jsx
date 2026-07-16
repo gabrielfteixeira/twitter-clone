@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef } from "react";
+import PropTypes from "prop-types"; // ES6
 
 export function TwitterForm({ onTweet }) {
   const textAreaRef = useRef();
@@ -64,3 +65,7 @@ export function TwitterForm({ onTweet }) {
     </div>
   );
 }
+
+TwitterForm.PropTypes = {
+  onTweet: PropTypes.func,
+};
