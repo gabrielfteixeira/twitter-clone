@@ -1,4 +1,4 @@
-# 🐦 Twitter Clone (X)
+# 🐦 Clone Twitter (X)
 
 Um clone simplificado da interface do Twitter (X) desenvolvido para fins de estudo e portfólio. O projeto foca em componentização, design responsivo e fidelidade visual à plataforma original.
 
